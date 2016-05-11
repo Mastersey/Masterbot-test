@@ -13,7 +13,7 @@ import logging
 
 #modules
 from modules.masterbot import Masterbot
-
+from modules.backtask import BackgroundTasks
 
 botchan = '179723278208860160'
 token = os.getenv('MASTERTOKEN')
@@ -27,6 +27,6 @@ There are a number of utility commands being showcased here.'''
 #   logging.basicConfig(filename=debugbot, level=logging.DEBUG)
 #else: logging.basicConfig(filename=debugbot, level=logging.INFO)
 
-bot = commands.Bot(command_prefix=command_prefix, description=description)
-bot = Masterbot()
+#bot = commands.Bot(command_prefix=command_prefix, description=description)
+bot = Masterbot(command_prefix=command_prefix, description=description)
 bot.run(token)
