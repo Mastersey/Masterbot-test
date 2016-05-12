@@ -25,14 +25,3 @@ class Masterbot(discord.Client):
 	        print(message.content)
 	        if message.content == self.prefix+"ping":
 	        	await self.send_message(message.channel, "Pong !")
-
-	async def roll(self, dice : str):
-	    """Rolls a dice in NdN format."""
-	    try:
-	        rolls, limit = map(int, dice.split('d'))
-	    except Exception:
-	        await self.say('Format has to be in NdN!')
-	        return
-
-	    result = ', '.join(str(random.randint(1, limit)) for r in range(rolls))
-	    await self.say(result)
