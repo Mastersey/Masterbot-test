@@ -1,0 +1,6 @@
+{
+	"guild_id1":{"sub1":"Nomchan1","sub2":"Nomchan2"},
+	"guild_id2":{"sub1":"Nomchan__1","sub2":"Nomchan__2"},
+	"guild_id3":{"sub1":"Nomchan___1","sub2":"Nomchan___2"},
+	"guild_id4":{"sub1":"Nomchan____1","sub2":"Nomchan____2"},
+}
