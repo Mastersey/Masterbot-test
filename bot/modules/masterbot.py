@@ -38,6 +38,7 @@ class Masterbot(discord.Client):
 		return await super().send_message(*args, **kwargs)
 
 	async def on_message(self, message):
+<<<<<<< HEAD
 
 		if message.content == self.prefix+'clear':
 			deleted_messages = await self.purge_from(
@@ -66,3 +67,13 @@ class Masterbot(discord.Client):
 
 		if message.content == self.prefix+"test":
 			await self.send_message(message.channel, message.channel)
+=======
+	        #check spam here
+	        if message.channel.is_private:
+	            return
+
+	        server = message.server
+	        print(message.content)
+	        if message.content == self.prefix+"ping":
+	        	await self.send_message(message.channel, "Pong !")
+>>>>>>> origin/dev
