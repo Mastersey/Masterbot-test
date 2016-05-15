@@ -1,13 +1,9 @@
 #!/usr/bin/env python3
 # -*-coding:Latin-1 -*
-from functools import wraps
 import discord
 import logging
 import asyncio
 import json
-
-#from modules.functions import Functions
-#from modules.backtask import BackgroundTasks
 
 class Masterbot(discord.Client):
 
@@ -38,7 +34,9 @@ class Masterbot(discord.Client):
 		return await super().send_message(*args, **kwargs)
 
 	async def on_message(self, message):
-<<<<<<< HEAD
+
+		if message.channel.is_private:
+			return
 
 		if message.content == self.prefix+'clear':
 			deleted_messages = await self.purge_from(
@@ -59,21 +57,13 @@ class Masterbot(discord.Client):
 
 			await self.delete_message(confirm_message)
 
-		if message.channel.is_private:
-			return
-
 		if message.content == self.prefix+"ping":
 			await self.send_message(message.channel, "Pong !")
 
 		if message.content == self.prefix+"test":
 			await self.send_message(message.channel, message.channel)
-=======
-	        #check spam here
-	        if message.channel.is_private:
-	            return
 
-	        server = message.server
-	        print(message.content)
-	        if message.content == self.prefix+"ping":
-	        	await self.send_message(message.channel, "Pong !")
->>>>>>> origin/dev
+		print(message.content)
+
+		if message.content == self.prefix+"ping":
+			await self.send_message(message.channel, "Pong !")
